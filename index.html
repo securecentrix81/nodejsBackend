@@ -1,0 +1,11 @@
+<!-- In your HTML or main JavaScript file -->
+<script src="proxy-client.js"></script>
+<script>
+  // Initialize proxy interceptor
+  const proxy = new ProxyInterceptor('http://localhost:3001/proxy');
+  
+  // All subsequent network requests will be proxied
+  fetch('https://api.example.com/data')
+    .then(res => res.json())
+    .then(data => console.log(data));
+</script>
